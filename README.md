@@ -1,6 +1,6 @@
 # exemplo-typescript
 Exemplo de aplicação em typescript utilizando nodejs.
-Demonstração de como criar e utilizar uma Classes
+Demonstração de como criar e utilizar uma Classe
 
 # Requisitos
 - nodejs https://nodejs.org/
@@ -11,6 +11,7 @@ Demonstração de como criar e utilizar uma Classes
 1. Instalar nodejs
 
 Dica: utilize o gerenciador de versões nodejs chamado nvm: https://github.com/coreybutler/nvm-windows/releases
+
 2. Instalar módulo typescript
 
 `npm install typescript`
