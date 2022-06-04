@@ -9,6 +9,7 @@ Demonstração de como criar e utilizar uma Classes
 # Passos
 
 1. Instalar nodejs
+
 Dica: utilize o gerenciador de versões nodejs chamado nvm: https://github.com/coreybutler/nvm-windows/releases
 2. Instalar módulo typescript
 
