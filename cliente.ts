@@ -3,12 +3,16 @@ import { Pessoa } from "./pessoa";
 
 export class Cliente extends Pessoa {
     
-    private _endereco: Endereco;
+    private _enderecos: Endereco[] = [];
 
-    public get endereco(): Endereco {
-        return this._endereco;
+    public get enderecos(): Endereco[] {
+        return this._enderecos;
     }
-    public set endereco(value: Endereco) {
-        this._endereco = value;
+    public set enderecos(value: Endereco[]) {
+        this._enderecos = value;
+    }
+
+    public adicionarEndereco(endereco: Endereco) {
+        this._enderecos.push(endereco);
     }
 }

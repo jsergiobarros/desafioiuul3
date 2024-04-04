@@ -1,18 +1,21 @@
 import { Cliente } from "./cliente";
 import { Endereco } from "./endereco";
-import { Pessoa } from "./pessoa";
 
-var pessoa = new Pessoa();
-
-pessoa.nome = "Victor Vidigal Ribeiro";
-pessoa.idade = 36;
-
-console.log(pessoa.nome);
-console.log(pessoa.idade);
-
-var endereco = new Endereco();
-endereco.cep = '36030-140';
 
 var cliente = new Cliente();
+
 cliente.nome = "João";
-cliente.endereco = endereco;
+cliente.idade = 20;
+
+var endereco1 = new Endereco('21920-310', 'Rua Professor Veríssimo');
+var endereco2 = new Endereco('21920-000', 'Rua das Flores');
+
+cliente.adicionarEndereco(endereco1);
+cliente.adicionarEndereco(endereco2);
+
+console.log("Nome do Cliente: " + cliente.nome);
+console.log("Idade do Cliente: " + cliente.idade);
+console.log("Endereços do cliente:");
+for (let endereco of cliente.enderecos) {
+    console.log(endereco.cep + " - " + endereco.logradouro);
+}
