@@ -1,4 +1,4 @@
-import { Endereco } from "./endereco";
+import { Endereco } from "./Endereco";
 import { Pessoa } from "./Pessoa";
 import {IUsuario} from "./IUsuario";
 

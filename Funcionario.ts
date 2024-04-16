@@ -1,7 +1,7 @@
 import { Pessoa } from "./Pessoa";
 import {IUsuario} from "./IUsuario"
 import {Cargo} from "./Cargo";
-import {Endereco} from "./endereco";
+import {Endereco} from "./Endereco";
 
 export class Funcionario extends Pessoa  implements IUsuario{
     private _salario:number

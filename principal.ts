@@ -1,5 +1,5 @@
 import { Cliente } from "./Cliente";
-import { Endereco } from "./endereco";
+import { Endereco } from "./Endereco";
 
 
 var cliente = new Cliente();
