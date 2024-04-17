@@ -8,9 +8,13 @@ export class Endereco {
 
     private _uf: String;
 
-    constructor(cep: String, logradouro: string) {
-        this._cep = cep;
-        this._logradouro = logradouro;
+    constructor(cep: String, logradouro: String,numero:String,cidade:String, uf:String, complemento='') {
+        this.cep = cep;
+        this.logradouro = logradouro;
+        this.numero=numero
+        this.cidade=cidade
+        this.uf=uf
+        this.complemento=complemento
     }
 
 
