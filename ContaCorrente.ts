@@ -8,7 +8,7 @@ export class ContaCorrente extends Conta{
     private _limite:number
     constructor(limite:number,numero:String,cliente:Cliente) {
         super(numero,cliente);
-        this._limite=limite
+        this.limite=limite
         this.cliente.adicionarConta(this)
     }
 
@@ -30,11 +30,17 @@ export class ContaCorrente extends Conta{
         this._limite = value;
     }
 
+    get limite(): number {
+        return this._limite;
+    }
+
     public transferir(contaDestino: ContaCorrente|ContaPoupanca, valor:number){
         if (valor<this.calcularSaldo()){
-            contaDestino.depositar(valor)
-            this.sacar(valor)
-            console.log("transferencia de R$"+ valor + " realizada com sucesso para " + contaDestino.cliente.nome)
+
+            contaDestino.creditos.push(new Credito(valor))
+            this.debitos.push(new Debito(valor))
+
+            console.log("transferencia de R$ "+ valor + " realizada com sucesso para " + contaDestino.cliente.nome)
             return
         }
         console.log("saldo insuficiente")
@@ -42,7 +48,7 @@ export class ContaCorrente extends Conta{
 
     }
     public calcularSaldo():number{
-        let saldo = this._limite
+        let saldo = this.limite
 
         for(let i of this.creditos)
             saldo+=i.valor
