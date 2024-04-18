@@ -10,10 +10,20 @@ export class Funcionario extends Pessoa  implements IUsuario{
 
     constructor(cpf:String,nome :String,telefone:String,cargo:Cargo) {
         super(cpf,nome,telefone)
+        cargo.funcionarios.push(this)
         this.cargos.push(cargo)
 
     }
+    public removeCargo(cargo:String):void{
+
+
+
+        this.cargos.splice(this.cargos.map(e => e.nome).indexOf(cargo),1)
+
+    }
+
     public adicionaCargo(cargo:Cargo){
+        cargo.adicionaFuncionario(this)
         this.cargos.push(cargo)
     }
     public autenticar():boolean{

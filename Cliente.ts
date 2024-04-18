@@ -13,9 +13,16 @@ export class Cliente extends Pessoa implements IUsuario{
 
     constructor(cpf:String,nome :String,telefone:String,endereco:Endereco) {
         super(cpf,nome,telefone)
-        this._vip=this.autenticar()
-        this._enderecos.push(endereco)
+        this.vip=this.autenticar()
+        endereco.adicionaCliente(this)
+        this.enderecos.push(endereco)
     }
+
+
+    set vip(value: boolean) {
+        this._vip = value;
+    }
+
 
 
     public adicionarConta(conta:(ContaCorrente|ContaPoupanca)){
@@ -29,16 +36,31 @@ export class Cliente extends Pessoa implements IUsuario{
     get contas(): (ContaCorrente | ContaPoupanca)[] {
         return this._contas;
     }
+    public contaIndex(index=1):(ContaCorrente | ContaPoupanca){
+        if (index>this.contas.length){
+            console.log("usuário nao possui essa conta, tente outro index")
+            return
+        }
+        return this.contas[index-1]
+    }
+
 
     public autenticar(): boolean {
         return true
     }
 
-    public adicionarEndereco(endereco: Endereco) {
+    get enderecos(): Endereco[] {
+        return this._enderecos;
+    }
+
+    public adicionarEndereco(endereco: Endereco):void {
         this._enderecos.push(endereco);
     }
+    public removerEndereco(logradouro: String):void {
+        this.enderecos.splice(this.enderecos.map(e => e.logradouro).indexOf(logradouro),1)
+    }
     public listarEnderecos():void{
-        for (let i of this._enderecos){
+        for (let i of this.enderecos){
             console.log(i)
         }
 

@@ -1,3 +1,5 @@
+import {Cliente} from "./Cliente";
+
 export class Endereco {
     private _cep: String;
     private _logradouro: String;
@@ -7,6 +9,7 @@ export class Endereco {
     private _cidade: String;
 
     private _uf: String;
+    private _clientes:Cliente[]=[]
 
     constructor(cep: String, logradouro: String,numero:String,cidade:String, uf:String, complemento='') {
         this.cep = cep;
@@ -16,7 +19,13 @@ export class Endereco {
         this.uf=uf
         this.complemento=complemento
     }
+    public adicionaCliente(cliente:Cliente):void{
+        this.clientes.push(cliente)
+    }
 
+    get clientes(): Cliente[] {
+        return this._clientes;
+    }
 
     get cep(): String {
         return this._cep;

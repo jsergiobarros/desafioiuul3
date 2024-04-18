@@ -4,6 +4,10 @@ import {Cliente} from "./Cliente";
 
 export abstract class Conta {
     private _numero: String;
+    get numero(): String {
+        return this._numero;
+    }
+
     private _cliente:Cliente
     private _saldo:number
     private _debitos:Debito[]=[]
