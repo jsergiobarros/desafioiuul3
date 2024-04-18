@@ -1,6 +1,5 @@
-# exemplo-typescript
-Exemplo de aplicação em typescript utilizando nodejs.
-Demonstração de como criar e utilizar uma Classe
+# Desafio typescript
+
 
 # Requisitos
 - nodejs https://nodejs.org/
@@ -16,10 +15,18 @@ Dica: utilize o gerenciador de versões nodejs chamado nvm: https://github.com/c
 
 `npm install typescript`
 
-3. Exceutar arquivo principal.ts
+3. Exceutar arquivos de aplicação 
 
-`.\node_modules\.bin\tsc -t es5 principal.ts `
+`tsc Aplicação1.ts `
+ tsc Aplicação2.ts 
+ tsc Aplicação3.ts 
+ tsc Aplicação4.ts 
+ tsc Aplicação5.ts 
 
-4. Executar o arquivo principal.js
+4. Executar os arquivos .js criados
 
-`node principal.js`
+`node Aplicação1.js`
+ node Aplicação2.js`
+ node Aplicação3.js`
+ node Aplicação4.js`
+ node Aplicação5.js`
