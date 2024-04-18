@@ -13,4 +13,3 @@ cliente.adicionarEndereco(endereco1)
 cliente.adicionarEndereco(endereco2)
 
 cliente.listarEnderecos()
-

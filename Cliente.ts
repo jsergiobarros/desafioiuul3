@@ -19,9 +19,7 @@ export class Cliente extends Pessoa implements IUsuario{
     }
 
 
-    set vip(value: boolean) {
-        this._vip = value;
-    }
+
 
 
 
@@ -29,13 +27,9 @@ export class Cliente extends Pessoa implements IUsuario{
         this.contas.push(conta)
     }
 
-    set contas(value: (ContaCorrente | ContaPoupanca)[]) {
-        this._contas = value;
-    }
 
-    get contas(): (ContaCorrente | ContaPoupanca)[] {
-        return this._contas;
-    }
+
+
     public contaIndex(index=1):(ContaCorrente | ContaPoupanca){
         if (index>this.contas.length){
             console.log("usuário nao possui essa conta, tente outro index")
@@ -49,12 +43,9 @@ export class Cliente extends Pessoa implements IUsuario{
         return true
     }
 
-    get enderecos(): Endereco[] {
-        return this._enderecos;
-    }
 
     public adicionarEndereco(endereco: Endereco):void {
-        this._enderecos.push(endereco);
+        this.enderecos.push(endereco);
     }
     public removerEndereco(logradouro: String):void {
         this.enderecos.splice(this.enderecos.map(e => e.logradouro).indexOf(logradouro),1)
@@ -63,7 +54,17 @@ export class Cliente extends Pessoa implements IUsuario{
         for (let i of this.enderecos){
             console.log(i)
         }
-
-
+    }
+    set vip(value: boolean) {
+        this._vip = value;
+    }
+    set contas(value: (ContaCorrente | ContaPoupanca)[]) {
+        this._contas = value;
+    }
+    get contas(): (ContaCorrente | ContaPoupanca)[] {
+        return this._contas;
+    }
+    get enderecos(): Endereco[] {
+        return this._enderecos;
     }
 }

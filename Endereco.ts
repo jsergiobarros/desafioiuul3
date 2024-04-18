@@ -22,6 +22,10 @@ export class Endereco {
     public adicionaCliente(cliente:Cliente):void{
         this.clientes.push(cliente)
     }
+    public removeCliente(cliente:String):void{
+        this.clientes.splice(this.clientes.map(e => e.nome).indexOf(cliente),1)
+
+    }
 
     get clientes(): Cliente[] {
         return this._clientes;
